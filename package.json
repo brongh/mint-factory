@@ -1,0 +1,22 @@
+{
+  "name": "mint-factory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brongh/mint-factory.git"
+  },
+  "author": "brongh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brongh/mint-factory/issues"
+  },
+  "homepage": "https://github.com/brongh/mint-factory#readme",
+  "dependencies": {
+    "erc721a": "^2.2.0"
+  }
+}
