@@ -1,14 +1,29 @@
-// Contract based on [https://docs.openzeppelin.com/contracts/3.x/erc721](https://docs.openzeppelin.com/contracts/3.x/erc721)
+//Contract based on [https://docs.openzeppelin.com/contracts/3.x/erc721](https://docs.openzeppelin.com/contracts/3.x/erc721)
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "erc721a/contracts/ERC721A.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract Azuki is ERC721A {
-  constructor() ERC721A("Azuki", "AZUKI") {}
+contract MyNFT is ERC721URIStorage, Ownable {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
 
-  function mint(uint256 quantity) external payable {
-    // _safeMint's second argument now takes in a quantity, not a tokenId.
-    _safeMint(msg.sender, quantity);
-  }
+    constructor() ERC721("MyNFT", "NFT") {}
+
+    function mintNFT(address recipient, string memory tokenURI)
+        public onlyOwner
+        returns (uint256)
+    {
+        _tokenIds.increment();
+
+        uint256 newItemId = _tokenIds.current();
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+
+        return newItemId;
+    }
 }
+

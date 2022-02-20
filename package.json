@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/brongh/mint-factory#readme",
   "dependencies": {
-    "dotenv": "^16.0.0",
-    "erc721a": "^2.2.0"
+    "@alch/alchemy-web3": "^1.2.4",
+    "@openzeppelin/contracts": "^4.5.0",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
