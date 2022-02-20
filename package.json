@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/brongh/mint-factory#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "erc721a": "^2.2.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.8.4"
   }
 }
